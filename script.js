@@ -8,7 +8,7 @@ window.addEventListener('scroll', () => {
     }
 });
 
-const background = document.querySelector('.background');
+const background = document.querySelector('.connect-background');
 
 document.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
