@@ -12,19 +12,11 @@
   --dark-blue: #1d3bd0;
   --darker-blue: #0000BF;
   --light-blue: #8fd2ff;
-  --grey: #F3F4F6;
+  --grey: #e5e5e5;
   --white: #fdfdfd;
   --black: #121212;
   --dark-transparent: rgb(13, 28, 104, .7);
   --background-dark-transparent:rgb(13, 28, 104, .4);
-
-  --radius: 10vw;
-  --invis-radius: 50vw;
-  --invis-offset: -40vw;
-  --offset: 15vw;
-  --item-opacity-default: 0.2;
-  --snap-height: 40vh;
-  --snap-count: 8;
 }
 
 h1 {
@@ -53,7 +45,7 @@ h5 {
 }
 
 h6 {
-  font-weight: 400;
+  font-weight: 500;
   font-size: 1.8rem;
 }
 
@@ -105,7 +97,6 @@ iframe {
   background-color: var(--dark-blue);
 }
 
-
 @keyframes scrolling {
   0% {
     opacity: 0;
@@ -117,7 +108,6 @@ iframe {
     transform: translateY(20px);
   }
 }
-
 
   .flex-row {
     display: flex;
@@ -171,6 +161,79 @@ iframe {
     }
 
 }
+
+.article-container {
+  width: 60%;
+}
+
+.article-main-img{
+  width: 100%;
+  height: 70vh;
+  object-fit: cover;
+}
+
+.article-sub-image img {
+  width: 100%;
+  height: 40vh;
+  object-fit: cover;
+}
+blockquote {
+  padding-left: 1rem;
+  border-left:  var(--darker-blue) 4px solid;
+}
+
+.title {
+  border-top: .4px solid var(--darker-blue);
+  border-bottom: .4px solid var(--darker-blue);
+}
+
+.title h1 {
+  color: var(--darker-blue);
+  font-size: 8.6em;
+}
+
+.blog-portal-more {
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.blog-portal-more > div {
+  display: inline-block;
+}
+
+.blog-portal-more-card {
+  padding: 1rem;
+  width: 30%;
+  white-space: normal;
+}
+
+.blog-portal-more-img {
+  height: 30vh;
+  width: 100%;
+  object-fit: cover;
+}
+
+.blog-portal-main-card, .blog-portal-left {
+  width: 50%;
+}
+
+.blog-portal-main-card {
+  width: 100%;
+}
+
+.blog-portal-main-img{
+  width: 100%;
+  height: 60vh;
+  object-fit: cover;
+}
+
+.blog-portal-img{
+  width: 30%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
 
 .connect-background {
   background-image: url(../website-images/lets-connect.jpg);
@@ -320,6 +383,43 @@ footer p {
   h6 { font-size: 2.4rem; }
   p, a { font-size: 1.8rem; }
 
+  .article-container {
+    width: 80%;
+  }
+
+  .title h1 {
+    font-size: 6.6em;
+  }
+
+  .blog-portal {
+    flex-direction: column;
+  }
+
+  .blog-portal-main-card, .blog-portal-left {
+    width: 100%;
+  }
+
+  .blog-portal-left {
+    flex-direction: row !important;
+    align-items: flex-start;
+  }
+  
+  .blog-portal-main-card {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  
+  .blog-portal-main-img{
+    width: 100%;
+    height: 60vh;
+    object-fit: cover;
+  }
+  
+  .blog-portal-img{
+    width: 30%;
+    object-fit: contain;
+  }
+
   .connect-background {
     height: 60vh;
     font-size: 10em;
@@ -337,6 +437,45 @@ footer p {
     h5 { font-size: 1.8rem; }
     h6 { font-size: 1.6rem; }
     p, a { font-size: .6rem; }
+
+    .article-container {
+      width: 90%;
+    }
+    
+    .title h1 {
+      font-size: 5.2em;
+    }
+  
+    .blog-portal-left {
+      flex-direction: column !important;
+    }
+    
+    .blog-portal-card:nth-child(1) {
+      padding-bottom: 1.4rem ;
+      border-bottom: 2px solid var(--grey);
+    }
+    .blog-portal-img{
+      width: 20%;
+    }
+    .blog-portal-main-img{
+      height: 54vh;
+    }
+
+    .blog-portal-more-img{
+      height: 28vh;
+    }
+
+    .blog-portal-more {
+      gap: 3rem;
+      display: grid;
+      grid-template-columns: auto auto;
+    }
+    
+    .blog-portal-more-card {
+      padding: 0;
+      width: 100%;
+    }
+
 	.contact-us-container {
 		padding: .2rem;
 	}
@@ -359,6 +498,18 @@ footer p {
     h5 { font-size: 1.6rem; }
     h6 { font-size: 1.4rem; }
     p, a { font-size: 0.95rem; }
+
+    .article-container {
+      width: 100%;
+    }
+
+    .title h1 {
+      font-size: 2.4em;
+    }
+    .blog-portal-more-img{
+      height: 38vh;
+    }
+
 	.contact-container .contact-details {
 		font-size: 14px;
 	}
@@ -385,6 +536,33 @@ footer p {
   h5 { font-size: 1.4rem; }
   h6 { font-size: 1.2rem; }
   p, a { font-size: 0.9rem !important; }
+  .title h1 {
+    font-size: 2.2em;
+  }
+  .blog-portal-more-card {
+    width: 100%;
+  }
+
+  .blog-portal-more-img{
+    height: 28vh;
+  }
+  
+  .blog-portal-more {
+    grid-template-columns: auto;
+  }
+
+  .blog-portal-img{
+    width: 100%;
+    height: 20vh;
+    object-fit: cover;
+  }
+  .blog-portal-main-img {
+    height: 30vh;
+  }
+  .blog-portal-card {
+    flex-direction: column;
+    width: 100%;
+  }
   .connect-background {
     height: 40vh;
     font-size: 3em;
@@ -396,5 +574,8 @@ footer p {
 @media only screen and (max-width: 450px) {
   .footer-nav-links {
     width: 20rem;
+  }
+  .title h1 {
+    font-size: 2em;
   }
 }

@@ -330,8 +330,6 @@ iframe {
   border-radius: .4rem 0 0 .4rem;
 }
 .scroll-container, .scroll-container-blog {
-  -webkit-mask-image: linear-gradient(to right, var(--dark-blue), var(--primary-blue), var(--primary-blue));
-  
   overflow-x: auto;
   overscroll-behavior-x: contain;
   display: flex;
