@@ -220,7 +220,7 @@ iframe {
 .hero:nth-child(3) {
   background-color: var(--dark-blue);
 }
-.hero:nth-child(3) h2, .hero:nth-child(4) h2, .content h1 {
+.hero:nth-child(3) h2, .hero:nth-child(4) h2, .service h1 {
   font-weight: 800;
   text-decoration: underline solid 2px;
   padding-bottom: 1rem;
@@ -262,32 +262,11 @@ iframe {
   width: 50%;
 }
 
-.content {
-  position: relative;
-  margin: 0 auto 8rem;
-  
-  &:before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: -99px;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background-color: white;
-    z-index: 99;
-    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  }
-}
-
-.content-inner {
-  margin: 6rem;
-  max-width: 200rem;
-}
-
 .service-wrapper {
   display: flex;
   align-items: center;
+  margin: 6rem;
+  max-width: 200rem;
 
   &.banner {
     min-height: 100vh;
@@ -566,10 +545,11 @@ footer p {
     width: 23.6rem;
     height: 28rem;
   }
-  .content {
-    padding: 2rem;
-    margin: 0;
+  .service-wrapper {
+    margin: 1rem;
+    max-width: fit-content;
   }
+
   .connect-background {
     height: 60vh;
     font-size: 10em;
@@ -578,10 +558,6 @@ footer p {
 	.contact-container {
 		width: 100%;
 	}
-  .content-inner {
-    margin: 1rem;
-    max-width: fit-content;
-  }
 }
 @media only screen and (max-width: 1040px) {
     h1 { font-size: 3.4rem; }
@@ -709,9 +685,6 @@ footer p {
   .footer-nav-links {
     width: 20rem;
   }
-.content {
-  padding: .6rem;
-}
 .about-section img{
   width: 52% !important;
 }
