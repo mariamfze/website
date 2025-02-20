@@ -197,13 +197,18 @@ blockquote {
   white-space: nowrap;
 }
 
+.blog-portal-more a {
+  text-decoration: none;
+  color: var(--black);
+}
+
 .blog-portal-more > div {
   display: inline-block;
 }
 
 .blog-portal-more-card {
   padding: 1rem;
-  width: 30%;
+  width: 48%;
   white-space: normal;
 }
 
@@ -469,6 +474,11 @@ footer p {
       gap: 3rem;
       display: grid;
       grid-template-columns: auto auto;
+    }
+
+    .blog-portal-more a {
+      text-decoration: none;
+      color: var(--black);
     }
     
     .blog-portal-more-card {
