@@ -1,12 +1,12 @@
 const navbar = document.getElementById('navbar');
-const serviceCard = document.getElementById("service-card");
+const serviceCard = document.querySelector("#service-card");
 const articleWrapper = document.getElementById('article-wrapper');
-const scrollContainerBlog = document.getElementById('scroll-container-blog');
 
 
 let http = new XMLHttpRequest();
-http.open('get', '../assets/json/home.json', true);
+http.open('get', './assets/json/home.json', true);
 http.send();
+
 http.onload = function(){
   if(this.readyState == 4 && this.status == 200){
      let blogs = JSON.parse(this.responseText);
@@ -18,7 +18,7 @@ http.onload = function(){
               <h6>${item.title}</h3>
                 <p>${item.para120}</p>
             </div>
-            <a href="../assets/blogs/blog.html?id=${item.id}" id="cta">Know More</a>
+            <a href="./assets/blogs/blog.html?id=${item.id}" id="cta">Know More</a>
             </div>
         </div>
      
@@ -28,29 +28,28 @@ http.onload = function(){
   }
 }
 
-http.open('get', '../assets/json/blogs.json', true);
-http.send();
-http.onload = function(){
-  if(this.readyState == 4 && this.status == 200){
-     let blogs = JSON.parse(this.responseText);
-     let output = "";
-     for(let item of blogs){
-        output += `
-  <div class="d-flex gap-2">
-          <img class="blog-img" src="${console.log(item.portrait)}" alt="">
-          <div class="d-flex justify-content-center align-items-start flex-column">
-          <div>
-            <h6>${item.title}</h6>
-            <p>${item.para120}</p>
-          </div>
-          <a href="./assets/blogs/blog.html?id=${item.id}" id="cta">Know More</a>
-        </div>
-        </div>
-        `;
-     }
-     scrollContainerBlog.innerHTML = output;
-  }
-}
+
+// async function serviceCard () {
+//   const response = await fetch(`../assets/json/blogs.json`);
+//   const service = await response.json();
+
+//   for(let item of service){
+//      `
+// <div class="d-flex gap-2">
+//       <img class="blog-img" src="${console.log(item.portrait)}" alt="">
+//       <div class="d-flex justify-content-center align-items-start flex-column">
+//       <div>
+//         <h6>${item.title}</h6>
+//         <p>${item.para120}</p>
+//       </div>
+//       <a href="./assets/blogs/blog.html?id=${item.id}" id="cta">Know More</a>
+//     </div>
+//     </div>
+//     `;
+//  }
+// }
+
+// serviceCard.innerHTML = serviceCard()
 
 window.addEventListener('scroll', () => {
     if (window.scrollY > 50) { // Adjust this value based on when you want the color to change
