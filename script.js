@@ -99,7 +99,7 @@ fetch("assets/json/blogs.json")
               <h6>${item.title}</h6>
               <p>${item.para120}</p>
             </div>
-            <a href="blog/index.html?id=${item.id}" id="cta">Know More</a>
+            <a href="blog/index.html?id=${item.title}" id="cta">Know More</a>
           </div>
         `;
 

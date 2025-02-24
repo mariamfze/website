@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
         let servicesMenu = "";
         services.forEach(service => {
-            let serviceId = String(service.id); // Ensure ID is a string
+            let serviceId = String(service.title); // Ensure ID is a string
             if (serviceId && service.title) {
                 let shortTitle = service.title.split(" – ")[0]; // Crop sentence after first '-'
                 servicesMenu += `<li><a class="dropdown-item" href="../services/index.html?id=${serviceId}" onclick="handleServiceClick(event, '${serviceId}')">${shortTitle}</a></li>`;

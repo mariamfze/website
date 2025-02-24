@@ -11,7 +11,7 @@ http.onload = function(){
          output += `
          
         <div class="blog-portal-more-card">
-        <a href="../services/index.html?id=${item.id}">
+        <a href="../services/index.html?id=${item.title}">
         <img class="blog-portal-more-img rounded-2 mb-2" src="../assets/blog-images/${item.landscape}" alt="">
     
         <div class="blog-portal-content">
