@@ -4,12 +4,12 @@ document.addEventListener("DOMContentLoaded", function () {
           <img src="../.../../assets/logo.svg" alt="logo">
           <h1 class="mt-2 mb-2">Catalyst Media FZE</h1>
 
-          <div class="footer-nav-links d-flex justify-content-evenly mt-4 mb-1">
-              <a href="" class="footer-link">About Us</a>
-              <a href="" class="footer-link">Our Services</a>
-              <a href="" class="footer-link">Our Work</a>
-              <a href="" class="footer-link">Contact Us</a>
-          </div>
+        //   <div class="footer-nav-links d-flex justify-content-evenly mt-4 mb-1">
+        //       <a href="" class="footer-link">About Us</a>
+        //       <a href="" class="footer-link">Our Services</a>
+        //       <a href="" class="footer-link">Our Work</a>
+        //       <a href="" class="footer-link">Contact Us</a>
+        //   </div>
 
           <div class="footer-social-icons d-flex justify-content-between mt-1 mb-4">
               <a href="">
