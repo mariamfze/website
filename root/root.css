@@ -292,10 +292,10 @@ footer p {
   width: 26rem;
 }
 
-.footer-social-icons {
-  width: 12rem;
+.footer-social-icons, .hero-social-icons {
+  width: 8rem;
 }
-.footer-social-icon {
+.footer-social-icon, .hero-social-icon {
   height: 20px;
   width: auto;
 }
