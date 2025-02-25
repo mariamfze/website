@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 const card = document.createElement("div");
                 card.classList.add("service-box");
                 card.innerHTML = `
-                    <img src="../assets/blog-vectors/${item.svg}" alt="" height="180">
+                    <img src="../assets/blog-vectors/${item.svg}" alt="" height="200">
                     <h6>${item.title}</h6>
                     <p>${item.service}</p>
                     <a href="tel:+971526763400" class="cta">Contact Us</a>
