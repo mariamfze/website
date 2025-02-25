@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const footerContent = `
       <footer id="footer" class="text-center mt-5 p-5 container-fluid d-flex align-items-center flex-column">
-          <img src="../../../assets/logo.svg" alt="logo">
+          <img src="../../../assets/logo.svg" alt="The Logo">
           <h1 class="mt-2 mb-2">Catalyst Media FZE</h1>
 
 
@@ -20,6 +20,8 @@ document.addEventListener("DOMContentLoaded", function () {
           <span class="seperator" style="border-bottom: 1px solid white;"></span>
 
           <p>Copyright ©2025 All rights reserved by Catalyst Media FZE</p>
+          <p>Server: Catalyst Media FZE Web Server | Hosted on Secure Cloud</p>
+
       </footer>
   `;
 

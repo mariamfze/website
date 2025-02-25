@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // Render Main Service Card
             serviceWrapper.innerHTML = `
                 <div class="main-service-card container mb-5">
-                    <img class="service-svg" src="../assets/blog-images/${mainService.landscape}" alt="${mainService.id}">
+                    <img class="service-svg" src="../assets/blog-images/${mainService.landscape}" alt="${mainService.title}">
                     <div class="service-content">
                     <div class="service-text">
                         <h4>${mainService.title}</h4>
