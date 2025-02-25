@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", async function () {
     try {
-        const response = await fetch("../../assets/json/services.json");
+        const response = await fetch("../../assets/json/data.json");
         const services = await response.json();
 
         console.log("Loaded services JSON:", services); // Debugging log
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             let serviceId = String(service.id); // Ensure ID is a string
             if (serviceId && service.id) {
                 let shortTitle = service.title.split(" – ")[0]; // Crop sentence after first '-'
-                servicesMenu += `<li><a class="dropdown-item" href="../../services/index.html?id=${serviceId}" onclick="handleServiceClick(event, '${serviceId}')">${shortTitle}</a></li>`;
+                servicesMenu += `<li><a class="dropdown-item" href="../../service/index.html?id=${serviceId}" onclick="handleServiceClick(event, '${serviceId}')">${shortTitle}</a></li>`;
             } else {
                 console.warn("Skipping invalid service entry:", service);
             }
@@ -68,5 +68,5 @@ document.addEventListener("DOMContentLoaded", async function () {
 
 function handleServiceClick(event, serviceId) {
     event.preventDefault();
-    window.location.href = `../../services/index.html?id=${serviceId}`;
+    window.location.href = `../../service/index.html?id=${serviceId}`;
 }

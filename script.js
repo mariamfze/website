@@ -1,7 +1,5 @@
 const scrollSection = document.querySelectorAll(".scroll-section");
 const background = document.querySelector('.connect-background');
-const serviceCard = document.querySelector("#service-card");
-const scrollContainerBlog = document.querySelector("#scroll-container-blog");
 
 if (background) {
     document.addEventListener('scroll', () => {
@@ -80,26 +78,34 @@ items.forEach((item, index) => {
 });
 }
 
-fetch("assets/json/blogs.json")
-  .then((response) => {
-    if (!response.ok) throw new Error(`Failed to load JSON: ${response.status}`);
-    return response.json();
-  })
-  .then((data) => {
-    console.log("Loaded JSON Data:", data);
+document.addEventListener("DOMContentLoaded", function () {
+  const serviceCard = document.getElementById("service-card");
+  const scrollContainerBlog = document.getElementById("scroll-container-blog");
 
-    if (Array.isArray(data)) {
+  fetch("assets/json/data.json")
+    .then((response) => {
+      if (!response.ok) throw new Error(`Failed to load JSON: ${response.status}`);
+      return response.json();
+    })
+    .then((data) => {
+      console.log("Loaded JSON Data:", data);
+
+      if (!Array.isArray(data)) {
+        console.error("Error: JSON data is not an array.");
+        return;
+      }
+
       let serviceHTML = "";
       let blogHTML = "";
 
-      data.forEach((item) => {
+      data.slice(0, 6).forEach((item) => { // Limit to first 6 elements
         serviceHTML += `
           <div class="service-card d-flex justify-content-around flex-column" data-animation="flip-down">
             <div class="service-card-content">
               <h6>${item.title}</h6>
-              <p>${item.para120}</p>
+              <p>${item.service}</p>
             </div>
-            <a href="blog/index.html?id=${item.id}" id="cta">Know More</a>
+            <a href="service/index.html?id=${item.id}" id="cta">Know More</a>
           </div>
         `;
 
@@ -111,16 +117,24 @@ fetch("assets/json/blogs.json")
                 <h6>${item.title}</h6>
                 <p>${item.para120}</p>
               </div>
-              <a href="blog/index.html?id=${item.id}" id="cta">Know More</a>
+              <a href="service/index.html?id=${item.id}" id="cta">Know More</a>
             </div>
           </div>
         `;
       });
 
-      if (serviceCard) serviceCard.innerHTML = serviceHTML;
-      if (scrollContainerBlog) scrollContainerBlog.innerHTML = blogHTML;
-    } else {
-      console.error("Error: JSON data is not an array.");
-    }
-  })
-  .catch((error) => console.error("Error loading JSON:", error));
+      if (serviceCard) {
+        serviceCard.innerHTML = serviceHTML;
+      } else {
+        console.error("Error: #service-card element not found.");
+      }
+
+      if (scrollContainerBlog) {
+        scrollContainerBlog.innerHTML = blogHTML;
+      } else {
+        console.error("Error: #scroll-container-blog element not found.");
+      }
+    })
+    .catch((error) => console.error("Error loading JSON:", error));
+});
+

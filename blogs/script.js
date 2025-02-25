@@ -2,7 +2,7 @@ let http = new XMLHttpRequest();
 const serviceCard = document.querySelector("#service-card");
 const articleWrapper = document.getElementById('article-wrapper');
 
-http.open('get', '../assets/json/blogs.json', true);
+http.open('get', '../assets/json/data.json', true);
 http.send();
 http.onload = function(){
    if(this.readyState == 4 && this.status == 200){
@@ -47,7 +47,7 @@ http.onload = function(){
 
 async function getOneBlog () {
   const articleid =new URLSearchParams(window.location.search).get('id')
-  const response = await fetch(`../assets/json/blogs.json`);
+  const response = await fetch(`../assets/json/data.json`);
   const article = await response.json();
 
   displayArticle(article[articleid])

@@ -13,7 +13,7 @@
   --grey: #F3F4F6;
   --white: #fdfdfd;
   --black: #121212;
-  --dark-transparent: rgb(13, 28, 104, .7);
+  --dark-transparent: rgb(13, 28, 104, .9);
   --background-dark-transparent:rgb(13, 28, 104, .4);
 }
 
@@ -195,7 +195,6 @@ iframe {
   object-fit: cover;
 }
 /*blog end*/
-
 
 .connect-background {
   background-image: url(../../assets/website-images/lets-connect.jpg);
