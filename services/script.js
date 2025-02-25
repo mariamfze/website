@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     <img src="../assets/blog-vectors/${item.svg}" alt="" height="180">
                     <h6>${item.title}</h6>
                     <p>${item.service}</p>
-                    <a href="tel:+971526763400" class="cta">Call Us Now</a>
+                    <a href="tel:+971526763400" class="cta">Contact Us</a>
                 `;
 
                 // Click event to open the popup
