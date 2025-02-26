@@ -31,8 +31,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     </div>
                     
                     <div class="service-btns">
+                            <button type="button" class="me-2 btn btn-success"><a style="color: white; text-decoration: none;" href="../blog/index.html?id=${mainService.id}">Read Blog</a></button>
+
                       <button type="button" class="btn btn-primary"><a style="color: white; text-decoration: none;" href="tel:+971526763400">Call Now</a></button>
-                      <button type="button" class="btn btn-success"><a style="color: white; text-decoration: none;" href="mailto:info@catalystmediafze.com">Email Us</a></button>
+                      <button type="button" class="btn btn-primary "><a style="color: white; text-decoration: none;" href="mailto:info@catalystmediafze.com">Email Us</a></button>
                     </div>
                     </div>
                 </div>
@@ -53,6 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
             mainServiceCard.innerHTML = `
               <div class="d-flex justify-content-center flex-wrap gap-3">
                 ${randomServices.map(service => `
+                  <a href="../blog/index.html?id=${service.id}" style="text-decoration: none"; color: white;">
                   <div class="random-service-card mt-5" style="width: 300px;">
                       <img class="service-img" src="../assets/blog-images/${service.landscape}" alt="${service.title}">
                       <div class="service-content d-flex justify-content-between flex-column">
@@ -67,9 +70,12 @@ document.addEventListener("DOMContentLoaded", () => {
                           <button type="button" class="btn btn-success">
                             <a style="color: white; text-decoration: none;" href="mailto:info@catalystmediafze.com">Email Us</a>
                           </button>
+
+                        
                         </div>
                       </div>
                   </div>
+                  </a>
                 `).join("")}
               </div>
             `;

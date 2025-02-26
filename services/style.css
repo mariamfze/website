@@ -27,6 +27,7 @@ h2 {
   align-items: center; /* Centers the SVG */
   text-align: left; /* Ensures text aligns to the left */
   padding: 20px;
+  justify-content: space-between;
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -74,7 +75,6 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%; /* Full width button */
   margin-top: auto; /* Pushes button to the end */
   padding: 10px;
   background: #007bff;

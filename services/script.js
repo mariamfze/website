@@ -21,9 +21,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 card.classList.add("service-box");
                 card.innerHTML = `
                     <img src="../assets/blog-vectors/${item.svg}" alt="${item.title}" height="200">
+                    <div class="d-flex justify-content-between flex-column">
+                    <div>
                     <h6>${item.title}</h6>
                     <p>${item.service}</p>
+                    </div>
+                    <div class="d-flex gap-2 justify-content-end w-100 mt-4">
                     <a href="tel:+971526763400" class="cta">Contact Us</a>
+                    <a href="../blog/index.html?id=${item.id}" class="cta">Read Blog</a>
+                    </div>
+                    </div>
                 `;
 
                 // Click event to open the popup

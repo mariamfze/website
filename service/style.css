@@ -154,7 +154,7 @@ blockquote {
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
-  max-width: 60rem;
+  /* max-width: 30rem; */
   background: white;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -206,10 +206,6 @@ blockquote {
   display: flex;
   justify-content: end;
   margin-top: 15px;
-}
-
-.call-now-btn, .email-btn {
-  width: 10rem; /* Makes buttons equal width */
 }
 
 /* Hover Animation */
