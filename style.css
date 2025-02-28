@@ -491,13 +491,9 @@
   max-height: 40vh;
   overflow-y: auto;
   position: relative;
-  scrollbar-width: thin; /* For Firefox */
   -ms-overflow-style: none; /* For IE and Edge */
-  touch-action: none; /* Prevents scrolling the page while scrolling this */
-}
-
-.why-choose-grid:hover {
-  touch-action: auto; /* Enables scrolling within the section when hovered */
+  /* touch-action: none; */
+   /* Prevents scrolling the page while scrolling this */
 }
 
   .service-card {
