@@ -496,15 +496,6 @@
   touch-action: none; /* Prevents scrolling the page while scrolling this */
 }
 
-.why-choose-grid::-webkit-scrollbar {
-  width: 6px; /* Thin scrollbar for Webkit browsers */
-}
-
-.why-choose-grid::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-}
-
 .why-choose-grid:hover {
   touch-action: auto; /* Enables scrolling within the section when hovered */
 }
