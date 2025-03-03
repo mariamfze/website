@@ -1,12 +1,12 @@
+# Set a custom server header
 Header set Server "Catalyst Media FZE Web Server"
 
-
+# Enable URL rewriting
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^([^/.]+)/?$ $1.html [L]
 
-
-# Enable caching for images, CSS, and JavaScript
+# Enable caching for images, CSS, JavaScript, and other assets
 <IfModule mod_expires.c>
     ExpiresActive On
     ExpiresDefault "access plus 1 month"
@@ -20,12 +20,13 @@ RewriteRule ^([^/.]+)/?$ $1.html [L]
     ExpiresByType image/gif "access plus 1 month"
     ExpiresByType image/jpeg "access plus 1 month"
     ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/webp "access plus 1 year"  # WebP images now cache for 1 year
     ExpiresByType video/mp4 "access plus 1 month"
     ExpiresByType video/webm "access plus 1 month"
     ExpiresByType application/json "access plus 1 day"
 </IfModule>
 
-# Enable cache control headers
+# Enable cache control headers for different file types
 <IfModule mod_headers.c>
     <FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|svg|css|js|mp4|webm|woff|woff2|ttf|otf|eot|ogg|ogv|mp3|webp)$">
         Header set Cache-Control "max-age=2592000, public"
