@@ -1,3 +1,1 @@
-document.querySelectorAll("a").forEach(link => {
-  link.href = link.href.replace("index.html", "");
-});
+document.querySelectorAll("a").forEach(d=>{d.href=d.href.replace("index.html","")});

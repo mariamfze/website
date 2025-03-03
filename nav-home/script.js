@@ -1,26 +1,4 @@
-document.addEventListener("DOMContentLoaded", async function () {
-    try {
-        const response = await fetch("../assets/json/data.json");
-        const services = await response.json();
-
-        console.log("Loaded services JSON:", services); // Debugging log
-
-        if (!Array.isArray(services)) {
-            throw new Error("Invalid JSON format: Expected an array");
-        }
-
-        let servicesMenu = "";
-        services.forEach(service => {
-            let serviceId = String(service.id); // Ensure ID is a string
-            if (serviceId && service.id) {
-                let shortTitle = service.title.split(" – ")[0]; // Crop sentence after first '-'
-                servicesMenu += `<li><a class="dropdown-item" href="../service/index.html?id=${serviceId}" onclick="handleServiceClick(event, '${serviceId}')">${shortTitle}</a></li>`;
-            } else {
-                console.warn("Skipping invalid service entry:", service);
-            }
-        });
-
-        const navbarContent = `
+document.addEventListener("DOMContentLoaded",async function(){try{const n=await fetch("../assets/json/data.json");const o=await n.json();console.log("Loaded services JSON:",o);if(!Array.isArray(o)){throw new Error("Invalid JSON format: Expected an array")}let s="";o.forEach(n=>{let o=String(n.id);if(o&&n.id){let a=n.title.split(" – ")[0];s+=`<li><a class="dropdown-item" href="../service/index.html?id=${o}" onclick="handleServiceClick(event, '${o}')">${a}</a></li>`}else{console.warn("Skipping invalid service entry:",n)}});const e=`
 <div class="container">
     <a class="navbar-brand" href="../index.html">
         <img src="../assets/logo.svg" alt="logo" id="logo">
@@ -34,7 +12,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                 <a class="nav-link dropdown-toggle" href="#our-services" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Our Services
                 </a>
-                <ul class="dropdown-menu">${servicesMenu}</ul>
+                <ul class="dropdown-menu">${s}</ul>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="../index.html#about-us">About Us</a>
@@ -48,25 +26,4 @@ document.addEventListener("DOMContentLoaded", async function () {
         </ul>
     </div>
 </div>
-        `;
-
-        const navbar = document.getElementById("navbar");
-        if (navbar) {
-            navbar.innerHTML = navbarContent;
-        }
-
-        // Close dropdown when clicking outside
-        document.addEventListener("click", function (event) {
-            if (!event.target.closest(".dropdown")) {
-                document.querySelectorAll(".dropdown-menu").forEach(menu => menu.classList.remove("show"));
-            }
-        });
-    } catch (error) {
-        console.error("Error loading services JSON:", error);
-    }
-});
-
-function handleServiceClick(event, serviceId) {
-    event.preventDefault();
-    window.location.href = `../service/index.html?id=${serviceId}`;
-}
+        `;const l=document.getElementById("navbar");if(l){l.innerHTML=e}document.addEventListener("click",function(a){if(!a.target.closest(".dropdown")){document.querySelectorAll(".dropdown-menu").forEach(a=>a.classList.remove("show"))}})}catch(a){console.error("Error loading services JSON:",a)}});function a(a,n){a.preventDefault();window.location.href=`../service/index.html?id=${n}`}
