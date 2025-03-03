@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded",()=>{const t=document.getElementById("service-wrapper");const e=document.getElementById("main-service-card");const s=new URLSearchParams(window.location.search);const c=s.get("id");if(!c){t.innerHTML="<p class='text-center'>Service not found.</p>";return}fetch("../assets/json/data.json").then(t=>t.json()).then(s=>{const n=s.find(t=>t.id==c);if(!n){t.innerHTML="<p class='text-center'>Service not found.</p>";return}t.innerHTML=`
                 <div class="main-service-card container mb-5">
-                    <img class="service-svg" src="../assets/blog-images/${n.landscape}" alt="${n.title}">
+                    <img loading="lazy" class="service-svg" src="../assets/blog-images/${n.landscape}" alt="${n.title}">
                     <div class="service-content">
                     <div class="service-text">
                         <h4>${n.title}</h4>
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded",()=>{const t=document.getElementByI
                 ${o.map(t=>`
                   <a href="../blog/index.html?id=${t.id}" style="text-decoration: none"; color: white;">
                   <div class="random-service-card mt-5" style="width: 300px;">
-                      <img class="service-img" src="../assets/blog-images/${t.landscape}" alt="${t.title}">
+                      <img loading="lazy" class="service-img" src="../assets/blog-images/${t.landscape}" alt="${t.title}">
                       <div class="service-content d-flex justify-content-between flex-column">
                         <div class="service-text">
                           <h6>${t.title}</h6>

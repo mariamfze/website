@@ -13,7 +13,7 @@ http.onload = function(){
          
         <div class="blog-portal-more-card">
         <a href="../blog/index.html?id=${item.id}">
-        <img class="blog-portal-more-img rounded-2 mb-2" src="../assets/blog-images/${item.landscape}" alt="">
+        <img loading="lazy" class="blog-portal-more-img rounded-2 mb-2" src="../assets/blog-images/${item.landscape}" alt="">
     
         <div class="blog-portal-content">
           <div class="blog-portal-eyerow d-flex gap-2 align-items-center">
@@ -80,7 +80,7 @@ function displayArticle(article) {
 
         </div>
 
-        <img class="article-main-img rounded-2 mb-2" src="../assets/blog-images/${article.landscape}" alt="">
+        <img loading="lazy" class="article-main-img rounded-2 mb-2" src="../assets/blog-images/${article.landscape}" alt="">
 
         <div class="article-container mt-4">
           ${article.content}

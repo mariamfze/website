@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded",function(){const c=document.getElementById("services-container");const e=document.getElementById("popup");const n=document.querySelector(".close-btn");if(!c){console.warn("Skipping JSON fetch: #services-container not found.");return}const t=document.createElement("div");t.classList.add("popup-overlay");document.body.appendChild(t);fetch("../assets/json/data.json").then(n=>n.json()).then(n=>{n.forEach(n=>{const o=document.createElement("div");o.classList.add("service-box");o.innerHTML=`
-    <img src="../assets/blog-vectors/${n.svg}" alt="${n.title}" height="200">
+    <img loading="lazy" src="../assets/blog-vectors/${n.svg}" alt="${n.title}" height="200">
     <div class="d-flex justify-content-between flex-column">
     <div>
     <h6>${n.title}</h6>

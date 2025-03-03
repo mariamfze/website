@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded",async function(){try{const n=await fetch("../../assets/json/data.json");const o=await n.json();console.log("Loaded services JSON:",o);if(!Array.isArray(o)){throw new Error("Invalid JSON format: Expected an array")}let s="";o.forEach(n=>{let o=String(n.id);if(o&&n.id){let a=n.title.split(" – ")[0];s+=`<li><a class="dropdown-item" href="../../service/index.html?id=${o}" onclick="handleServiceClick(event, '${o}')">${a}</a></li>`}else{console.warn("Skipping invalid service entry:",n)}});const e=`
 <div class="container">
     <a class="navbar-brand" href="../../index.html">
-        <img src="../../assets/logo.svg" alt="logo" id="logo">
+        <img loading="lazy" src="../../assets/logo.svg" alt="logo" id="logo">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>

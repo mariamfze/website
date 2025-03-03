@@ -203,7 +203,7 @@
 .hero:nth-child(4) {
   background: var(--darker-blue);
   background-attachment: fixed;
-  background-image: url(./assets/website-images/why-choose-us.jpg);
+  background-image: url(./assets/website-images/why-choose-us.webp);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
