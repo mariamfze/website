@@ -1,20 +1,140 @@
-const e=document.querySelectorAll(".scroll-section");const o=document.querySelector(".connect-background");if(o){document.addEventListener("scroll",()=>{const e=window.scrollY;o.style.backgroundPosition=e!==0?`calc(50% + ${e}px) calc(50% + ${e}px)`:""})}window.addEventListener("scroll",()=>{if(window.scrollY>50){navbar.classList.add("scrolled")}else{navbar.classList.remove("scrolled")}});gsap.registerPlugin(ScrollTrigger);e.forEach(e=>{const o=e.querySelector(".wrapper");const n=o.querySelectorAll(".item");let t=null;if(e.classList.contains("vertical-section")){t="vertical"}else if(e.classList.contains("horizontal-section")){t="horizontal"}r(e,n,t)});function r(e,n,t){n.forEach((e,o)=>{if(o!==0){t=="horizontal"?gsap.set(e,{o:100}):gsap.set(e,{t:100})}});const r=gsap.timeline({l:{i:e,u:true,start:"top top",end:()=>`+=${n.length*100}%`,g:1,v:true},p:{m:"none"}});n.forEach((e,o)=>{r.to(e,{scale:.9,borderRadius:"10px"});t=="horizontal"?r.to(n[o+1],{o:0},"<"):r.to(n[o+1],{t:0},"<")})}document.addEventListener("DOMContentLoaded",function(){const t=document.getElementById("service-card");const r=document.getElementById("scroll-container-blog");fetch("assets/json/data.json").then(e=>{if(!e.ok)throw new Error(`Failed to load JSON: ${e.status}`);return e.json()}).then(e=>{console.log("Loaded JSON Data:",e);if(!Array.isArray(e)){console.error("Error: JSON data is not an array.");return}let o="";let n="";e.slice(0,6).forEach(e=>{o+=`
-  <div class="service-card d-flex justify-content-around flex-column" data-animation="flip-down">
-    <div class="service-card-content">
-      <h6>${e.title}</h6>
-      <p>${e.service}</p>
-    </div>
-    <a href="service/index.html?id=${e.id}" id="cta">Know More</a>
-  </div>
-`;n+=`
-  <div class="d-flex gap-2 blog-card justify-content-evenly">
-    <img class="blog-img" src="assets/blog-images/${e.portrait}" alt="${e.title}">
-    <div class="d-flex justify-content-between align-items-start flex-column p-3">
-      <div>
-        <h6>${e.title}</h6>
-        <p>${e.para120}</p>
-      </div>
-      <a href="service/index.html?id=${e.id}" id="cta">Know More</a>
-    </div>
-  </div>
-`});if(t){t.innerHTML=o}else{console.error("Error: #service-card element not found.")}if(r){r.innerHTML=n}else{console.error("Error: #scroll-container-blog element not found.")}})["catch"](e=>console.error("Error loading JSON:",e))});
+const scrollSection = document.querySelectorAll(".scroll-section");
+const background = document.querySelector('.connect-background');
+
+if (background) {
+    document.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+        background.style.backgroundPosition = scrollY !== 0 ? `calc(50% + ${scrollY}px) calc(50% + ${scrollY}px)` : '';
+    });
+};
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 50) { // Adjust this value based on when you want the color to change
+      navbar.classList.add('scrolled');
+  } else {
+      navbar.classList.remove('scrolled');
+  }
+});
+
+
+gsap.registerPlugin(ScrollTrigger);
+
+scrollSection.forEach((section) => {
+const wrapper = section.querySelector(".wrapper");
+const items = wrapper.querySelectorAll(".item");
+
+let direction = null;
+
+if (section.classList.contains("vertical-section")) {
+  direction = "vertical";
+} else if (section.classList.contains("horizontal-section")) {
+  direction = "horizontal";
+}
+
+initScroll(section, items, direction);
+});
+
+function initScroll(section, items, direction) {
+items.forEach((item, index) => {
+  if (index !== 0) {
+    direction == "horizontal"
+      ? gsap.set(item, { xPercent: 100 })
+      : gsap.set(item, { yPercent: 100 });
+  }
+});
+
+const timeline = gsap.timeline({
+  scrollTrigger: {
+    trigger: section,
+    pin: true,
+    start: "top top",
+    end: () => `+=${items.length * 100}%`,
+    scrub: 1,
+    invalidateOnRefresh: true
+  },
+  defaults: { ease: "none" }
+});
+items.forEach((item, index) => {
+  timeline.to(item, {
+    scale: 0.9,
+    borderRadius: "10px"
+  });
+
+  direction == "horizontal"
+    ? timeline.to(
+        items[index + 1],
+        {
+          xPercent: 0
+        },
+        "<"
+      )
+    : timeline.to(
+        items[index + 1],
+        {
+          yPercent: 0
+        },
+        "<"
+      );
+});
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  const serviceCard = document.getElementById("service-card");
+  const scrollContainerBlog = document.getElementById("scroll-container-blog");
+
+  fetch("assets/json/data.json")
+    .then((response) => {
+      if (!response.ok) throw new Error(`Failed to load JSON: ${response.status}`);
+      return response.json();
+    })
+    .then((data) => {
+      console.log("Loaded JSON Data:", data);
+
+      if (!Array.isArray(data)) {
+        console.error("Error: JSON data is not an array.");
+        return;
+      }
+
+      let serviceHTML = "";
+      let blogHTML = "";
+
+      data.slice(0, 6).forEach((item) => { // Limit to first 6 elements
+        serviceHTML += `
+          <div class="service-card d-flex justify-content-around flex-column" data-animation="flip-down">
+            <div class="service-card-content">
+              <h6>${item.title}</h6>
+              <p>${item.service}</p>
+            </div>
+            <a href="service/index.html?id=${item.id}" id="cta">Know More</a>
+          </div>
+        `;
+
+        blogHTML += `
+          <div class="d-flex gap-2 blog-card justify-content-evenly">
+            <img class="blog-img" src="assets/blog-images/${item.portrait}" alt="${item.title}">
+            <div class="d-flex justify-content-between align-items-start flex-column p-3">
+              <div>
+                <h6>${item.title}</h6>
+                <p>${item.para120}</p>
+              </div>
+              <a href="service/index.html?id=${item.id}" id="cta">Know More</a>
+            </div>
+          </div>
+        `;
+      });
+
+      if (serviceCard) {
+        serviceCard.innerHTML = serviceHTML;
+      } else {
+        console.error("Error: #service-card element not found.");
+      }
+
+      if (scrollContainerBlog) {
+        scrollContainerBlog.innerHTML = blogHTML;
+      } else {
+        console.error("Error: #scroll-container-blog element not found.");
+      }
+    })
+    .catch((error) => console.error("Error loading JSON:", error));
+});
+
