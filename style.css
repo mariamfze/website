@@ -458,7 +458,7 @@
 
 @media only screen and (max-width: 1280px) {
   .why-choose-container {
-    width: 70%;
+    width: 100%;
   }
   .service-card {
     width: 23.6rem;
@@ -496,26 +496,6 @@
       scrollbar-color: rgba(255, 255, 255, 0.5) rgba(255, 255, 255, 0.1); /* Scrollbar thumb & track color */
     }
     
-    /* Custom Scrollbar for Webkit Browsers (Chrome, Safari, Edge) */
-    .why-choose-grid::-webkit-scrollbar {
-      width: 6px; /* Width of the scrollbar */
-    }
-    
-    .why-choose-grid::-webkit-scrollbar-track {
-      background: rgba(255, 255, 255, 0.1); /* Track background */
-      border-radius: 10px; /* Rounded track */
-    }
-    
-    .why-choose-grid::-webkit-scrollbar-thumb {
-      background: rgba(255, 255, 255, 0.5); /* Scrollbar color */
-      border-radius: 10px; /* Rounded edges */
-      transition: background 0.3s ease-in-out;
-    }
-    
-    .why-choose-grid::-webkit-scrollbar-thumb:hover {
-      background: rgba(255, 255, 255, 0.8); /* Lighter color on hover */
-    }
-
   .service-card {
     width: 21rem;
     height: 30rem;
