@@ -1,2 +1,4 @@
-https://www.catalystmediafze.com/robots.txt
+User-agent: *
+Disallow:
+
 Sitemap: https://www.catalystmediafze.com/sitemaps/sitemap.xml
