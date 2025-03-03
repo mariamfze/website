@@ -1,2 +1,2 @@
 https://www.catalystmediafze.com/robots.txt
-Sitemap: https://www.catalystmediafze.com/sitemap.xml
+Sitemap: https://www.catalystmediafze.com/sitemaps/sitemap.xml
