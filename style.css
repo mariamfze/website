@@ -273,7 +273,7 @@
   transition: transform 0.3s ease-in-out, box-shadow 0.3s;
 }
 
-.icon-title {
+.why-choose-title {
   display: flex;
   align-items: center;
   justify-content: start;
@@ -281,12 +281,10 @@
   margin-bottom: 10px;
 }
 
-.icon-title i {
-  font-size: 1rem;
-}
 
-.icon-title h6 {
+.why-choose-title h6 {
   font-size: 1.2rem;
+  margin-bottom: 0;
 }
 
 .why-choose-box:hover {
