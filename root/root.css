@@ -317,7 +317,7 @@ footer p {
 .footer-social-icons, .hero-social-icons {
   width: 8rem;
 }
-.footer-social-icon, .hero-social-icon {
+.footer-social-icon{
   height: 20px;
   width: auto;
 }
