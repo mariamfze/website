@@ -1,140 +1,20 @@
-const scrollSection = document.querySelectorAll(".scroll-section");
-const background = document.querySelector('.connect-background');
-
-if (background) {
-    document.addEventListener('scroll', () => {
-        const scrollY = window.scrollY;
-        background.style.backgroundPosition = scrollY !== 0 ? `calc(50% + ${scrollY}px) calc(50% + ${scrollY}px)` : '';
-    });
-};
-
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 50) { // Adjust this value based on when you want the color to change
-      navbar.classList.add('scrolled');
-  } else {
-      navbar.classList.remove('scrolled');
-  }
-});
-
-
-gsap.registerPlugin(ScrollTrigger);
-
-scrollSection.forEach((section) => {
-const wrapper = section.querySelector(".wrapper");
-const items = wrapper.querySelectorAll(".item");
-
-let direction = null;
-
-if (section.classList.contains("vertical-section")) {
-  direction = "vertical";
-} else if (section.classList.contains("horizontal-section")) {
-  direction = "horizontal";
-}
-
-initScroll(section, items, direction);
-});
-
-function initScroll(section, items, direction) {
-items.forEach((item, index) => {
-  if (index !== 0) {
-    direction == "horizontal"
-      ? gsap.set(item, { xPercent: 100 })
-      : gsap.set(item, { yPercent: 100 });
-  }
-});
-
-const timeline = gsap.timeline({
-  scrollTrigger: {
-    trigger: section,
-    pin: true,
-    start: "top top",
-    end: () => `+=${items.length * 100}%`,
-    scrub: 1,
-    invalidateOnRefresh: true
-  },
-  defaults: { ease: "none" }
-});
-items.forEach((item, index) => {
-  timeline.to(item, {
-    scale: 0.9,
-    borderRadius: "10px"
-  });
-
-  direction == "horizontal"
-    ? timeline.to(
-        items[index + 1],
-        {
-          xPercent: 0
-        },
-        "<"
-      )
-    : timeline.to(
-        items[index + 1],
-        {
-          yPercent: 0
-        },
-        "<"
-      );
-});
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-  const serviceCard = document.getElementById("service-card");
-  const scrollContainerBlog = document.getElementById("scroll-container-blog");
-
-  fetch("assets/json/data.json")
-    .then((response) => {
-      if (!response.ok) throw new Error(`Failed to load JSON: ${response.status}`);
-      return response.json();
-    })
-    .then((data) => {
-      console.log("Loaded JSON Data:", data);
-
-      if (!Array.isArray(data)) {
-        console.error("Error: JSON data is not an array.");
-        return;
-      }
-
-      let serviceHTML = "";
-      let blogHTML = "";
-
-      data.slice(0, 6).forEach((item) => { // Limit to first 6 elements
-        serviceHTML += `
-          <div class="service-card d-flex justify-content-around flex-column" data-animation="flip-down">
-            <div class="service-card-content">
-              <h6>${item.title}</h6>
-              <p>${item.service}</p>
-            </div>
-            <a href="service/index.html?id=${item.id}" id="cta">Know More</a>
-          </div>
-        `;
-
-        blogHTML += `
-          <div class="d-flex gap-2 blog-card justify-content-evenly">
-            <img class="blog-img" src="assets/blog-images/${item.portrait}" alt="${item.title}">
-            <div class="d-flex justify-content-between align-items-start flex-column p-3">
-              <div>
-                <h6>${item.title}</h6>
-                <p>${item.para120}</p>
-              </div>
-              <a href="service/index.html?id=${item.id}" id="cta">Know More</a>
-            </div>
-          </div>
-        `;
-      });
-
-      if (serviceCard) {
-        serviceCard.innerHTML = serviceHTML;
-      } else {
-        console.error("Error: #service-card element not found.");
-      }
-
-      if (scrollContainerBlog) {
-        scrollContainerBlog.innerHTML = blogHTML;
-      } else {
-        console.error("Error: #scroll-container-blog element not found.");
-      }
-    })
-    .catch((error) => console.error("Error loading JSON:", error));
-});
-
+const scrollSection=document.querySelectorAll(".scroll-section"),background=document.querySelector(".connect-background");function initScroll(e,r,t){r.forEach((e,r)=>{0!==r&&("horizontal"==t?gsap.set(e,{xPercent:100}):gsap.set(e,{yPercent:100}))});let o=gsap.timeline({scrollTrigger:{trigger:e,pin:!0,start:"top top",end:()=>`+=${100*r.length}%`,scrub:1,invalidateOnRefresh:!0},defaults:{ease:"none"}});r.forEach((e,l)=>{o.to(e,{scale:.9,borderRadius:"10px"}),"horizontal"==t?o.to(r[l+1],{xPercent:0},"<"):o.to(r[l+1],{yPercent:0},"<")})}background&&document.addEventListener("scroll",()=>{let e=window.scrollY;background.style.backgroundPosition=0!==e?`calc(50% + ${e}px) calc(50% + ${e}px)`:""}),window.addEventListener("scroll",()=>{window.scrollY>50?navbar.classList.add("scrolled"):navbar.classList.remove("scrolled")}),gsap.registerPlugin(ScrollTrigger),scrollSection.forEach(e=>{let r=e.querySelector(".wrapper"),t=r.querySelectorAll(".item"),o=null;e.classList.contains("vertical-section")?o="vertical":e.classList.contains("horizontal-section")&&(o="horizontal"),initScroll(e,t,o)}),document.addEventListener("DOMContentLoaded",function(){let e=document.getElementById("service-card"),r=document.getElementById("scroll-container-blog");fetch("assets/json/data.json").then(e=>{if(!e.ok)throw Error(`Failed to load JSON: ${e.status}`);return e.json()}).then(t=>{if(console.log("Loaded JSON Data:",t),!Array.isArray(t)){console.error("Error: JSON data is not an array.");return}let o="",l="";t.slice(0,6).forEach(e=>{o+=`
+  <div class="service-card d-flex justify-content-around flex-column" data-animation="flip-down">
+    <div class="service-card-content">
+      <h6>${e.title}</h6>
+      <p>${e.service}</p>
+    </div>
+    <a href="service/index.html?id=${e.id}" id="cta">Know More</a>
+  </div>
+`,l+=`
+  <div class="d-flex gap-2 blog-card justify-content-evenly">
+    <img class="blog-img" src="assets/blog-images/${e.portrait}" alt="${e.title}">
+    <div class="d-flex justify-content-between align-items-start flex-column p-3">
+      <div>
+        <h6>${e.title}</h6>
+        <p>${e.para120}</p>
+      </div>
+      <a href="service/index.html?id=${e.id}" id="cta">Know More</a>
+    </div>
+  </div>
+`}),e?e.innerHTML=o:console.error("Error: #service-card element not found."),r?r.innerHTML=l:console.error("Error: #scroll-container-blog element not found.")}).catch(e=>console.error("Error loading JSON:",e))});

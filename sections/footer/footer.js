@@ -1,23 +1,44 @@
-document.addEventListener("DOMContentLoaded",function(){const s=`
-    <footer id="footer" class="text-center mt-5 p-5 container-fluid d-flex align-items-center flex-column">
-        <img loading="lazy" src="../../../assets/logo.svg" alt="The Logo">
-        <h1 class="mt-2 mb-2">Catalyst Media FZE</h1>
-
-
-        <div class="footer-social-icons d-flex justify-content-between mt-1 mb-4">
-            <a href="https://x.com/CatalystMedia24">
-                <img loading="lazy" src="../../../assets/socials/x.svg" alt="x" class="footer-social-icon">
-            </a>
-            <a href="https://www.instagram.com/catalystmediafze/">
-                <img loading="lazy" src="../../../assets/socials/instagram.svg" alt="instagram" class="footer-social-icon">
-            </a>
-            <a href="https://www.linkedin.com/company/catalyst-media-fze/posts/?feedView=all">
-                <img loading="lazy" src="../../../assets/socials/linkedin-in.svg" alt="linkedin-in" class="footer-social-icon">
-            </a>
+document.addEventListener("DOMContentLoaded",function(){let e=document.getElementById("contact-us");e&&(e.innerHTML=`
+    <div class="connect-background"><span>Let's Connect.</span></div>
+    <div class="contact-us-container">
+        <div class="innerwrap">
+            <section class="contact-header" id="contact-us">
+                <div class="textcenter">
+                    <h5 class="shtext">Contact Us</h5>
+                    <p>We’re here to help your business grow. Reach out to us today for a free consultation and take the first step toward digital success.</p>
+                    <span class="seperator"></span>
+                </div>
+            </section>
+            <section class="contact-container d-flex justify-content-center align-items-start">
+                <div class="embedded-video-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3606.4513862554345!2d55.48858149999999!3d25.322630000000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5f5df14e533d%3A0x73cc61cd6d65a7e3!2sSharjah%20Research%20Technology%20and%20Innovation%20Park!5e0!3m2!1sen!2sin!4v1739627030427!5m2!1sen!2sin" 
+                    loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="last m-3">
+                    <div class="sec2innercont">
+                        <div class="contact-details">
+                            <p><strong>Address:</strong> Office B20-174, Sharjah Research Technology & Innovations Park (SRTIP) complex, University City, Sharjah, U.A.E</p>
+                            <p><strong>Phone:</strong> +971526763400</p>
+                            <p><strong>Email:</strong> info@catalystmediafze.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <h6 class="contact-form-title">Let’s create something amazing together.<br><strong>Contact us today!</strong></h6>
+                        <form action="https://formsubmit.co/info@catalystmediafze.com" method="POST">
+                            <div class="d-flex gap-2">
+                                <input class="form-control" type="text" name="first_name" placeholder="First Name" required>
+                                <input class="form-control" type="text" name="last_name" placeholder="Last Name">
+                            </div>
+                            <div class="d-flex gap-2 mt-2">
+                                <input class="form-control" type="email" name="email" placeholder="Email" required>
+                                <input class="form-control" type="tel" name="phone" placeholder="Contact Number" required>
+                            </div>
+                            <textarea class="form-control mt-2" name="message" cols="30" rows="7" placeholder="Your message here..."></textarea>
+                            <div><input class="btn btn-primary mt-2" type="submit" value="Send"></div>
+                        </form>
+                    </div>
+                </div>
+            </section>
         </div>
-
-        <span class="seperator" style="border-bottom: 1px solid white;"></span>
-
-        <p>Copyright ©2025 All rights reserved by Catalyst Media FZE</p>
-    </footer>
-`;const t=document.getElementById("footer");if(t){t.innerHTML=s}});
+    </div>
+`);let t=document.querySelector(".connect-background");t&&document.addEventListener("scroll",()=>{let e=window.scrollY;t.style.backgroundPosition=0!==e?`calc(50% + ${e}px) calc(50% + ${e}px)`:""})});

@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded",async function(){try{const n=await fetch("../../assets/json/data.json");const o=await n.json();console.log("Loaded services JSON:",o);if(!Array.isArray(o)){throw new Error("Invalid JSON format: Expected an array")}let s="";o.forEach(n=>{let o=String(n.id);if(o&&n.id){let a=n.title.split(" – ")[0];s+=`<li><a class="dropdown-item" href="../../service/index.html?id=${o}" onclick="handleServiceClick(event, '${o}')">${a}</a></li>`}else{console.warn("Skipping invalid service entry:",n)}});const e=`
+document.addEventListener("DOMContentLoaded",async function(){try{let e=await fetch("../../assets/json/data.json"),l=await e.json();if(console.log("Loaded services JSON:",l),!Array.isArray(l))throw Error("Invalid JSON format: Expected an array");let n="";l.forEach(e=>{let l=String(e.id);if(l&&e.id){let s=e.title.split(" – ")[0];n+=`<li><a class="dropdown-item" href="../../service/index.html?id=${l}" onclick="handleServiceClick(event, '${l}')">${s}</a></li>`}else console.warn("Skipping invalid service entry:",e)});let s=`
 <div class="container">
     <a class="navbar-brand" href="../../index.html">
         <img loading="lazy" src="../../assets/logo.svg" alt="logo" id="logo">
@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded",async function(){try{const n=await 
                 <a class="nav-link dropdown-toggle" href="#our-services" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Our Services
                 </a>
-                <ul class="dropdown-menu">${s}</ul>
+                <ul class="dropdown-menu">${n}</ul>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="../../index.html#about-us">About Us</a>
@@ -26,4 +26,4 @@ document.addEventListener("DOMContentLoaded",async function(){try{const n=await 
         </ul>
     </div>
 </div>
-        `;const l=document.getElementById("navbar");if(l){l.innerHTML=e}document.addEventListener("click",function(a){if(!a.target.closest(".dropdown")){document.querySelectorAll(".dropdown-menu").forEach(a=>a.classList.remove("show"))}})}catch(a){console.error("Error loading services JSON:",a)}});function a(a,n){a.preventDefault();window.location.href=`../../service/index.html?id=${n}`}
+        `,t=document.getElementById("navbar");t&&(t.innerHTML=s),document.addEventListener("click",function(e){e.target.closest(".dropdown")||document.querySelectorAll(".dropdown-menu").forEach(e=>e.classList.remove("show"))})}catch(o){console.error("Error loading services JSON:",o)}});function a(e,l){e.preventDefault(),window.location.href=`../../service/index.html?id=${l}`}

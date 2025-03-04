@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded",function(){const e=document.getElementById("contact-us");if(e){e.innerHTML=`
+document.addEventListener("DOMContentLoaded",function(){let e=document.getElementById("contact-us");e&&(e.innerHTML=`
     <div class="connect-background"><span>Let's Connect.</span></div>
     <div class="contact-us-container">
         <div class="innerwrap">
@@ -41,4 +41,4 @@ document.addEventListener("DOMContentLoaded",function(){const e=document.getElem
             </section>
         </div>
     </div>
-`}const t=document.querySelector(".connect-background");if(t){document.addEventListener("scroll",()=>{const e=window.scrollY;t.style.backgroundPosition=e!==0?`calc(50% + ${e}px) calc(50% + ${e}px)`:""})}});
+`);let t=document.querySelector(".connect-background");t&&document.addEventListener("scroll",()=>{let e=window.scrollY;t.style.backgroundPosition=0!==e?`calc(50% + ${e}px) calc(50% + ${e}px)`:""})});
