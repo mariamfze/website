@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded",function(){let e=document.getElemen
             </section>
             <section class="contact-container d-flex justify-content-center align-items-start">
                 <div class="embedded-video-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3606.4513862554345!2d55.48858149999999!3d25.322630000000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5f5df14e533d%3A0x73cc61cd6d65a7e3!2sSharjah%20Research%20Technology%20and%20Innovation%20Park!5e0!3m2!1sen!2sin!4v1739627030427!5m2!1sen!2sin" 
+                    <iframe title="The Location of Catalyst Media FZE" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3606.4513862554345!2d55.48858149999999!3d25.322630000000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5f5df14e533d%3A0x73cc61cd6d65a7e3!2sSharjah%20Research%20Technology%20and%20Innovation%20Park!5e0!3m2!1sen!2sin!4v1739627030427!5m2!1sen!2sin" 
                     loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <div class="last m-3">
