@@ -4,7 +4,9 @@ const scrollSection=document.querySelectorAll(".scroll-section"),background=docu
       <h6>${e.title}</h6>
       <p>${e.service}</p>
     </div>
-    <a href="service/index.html?id=${e.id}" id="cta">Know More</a>
+    <a href="service/index.html?id=${e.id}" id="cta">
+    <span>Know More</span>
+    </a>
   </div>
 `,l+=`
   <div class="d-flex gap-2 blog-card justify-content-evenly">
@@ -14,7 +16,9 @@ const scrollSection=document.querySelectorAll(".scroll-section"),background=docu
         <h6>${e.title}</h6>
         <p>${e.para120}</p>
       </div>
-      <a href="service/index.html?id=${e.id}" id="cta">Know More</a>
+      <a href="service/index.html?id=${e.id}" id="cta">
+    <span>Know More</span>
+    </a>
     </div>
   </div>
 `}),e?e.innerHTML=o:console.error("Error: #service-card element not found."),r?r.innerHTML=l:console.error("Error: #scroll-container-blog element not found.")}).catch(e=>console.error("Error loading JSON:",e))});

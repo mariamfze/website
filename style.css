@@ -573,7 +573,7 @@
 }
 @media only screen and (max-width: 450px) {
 .about-section img{
-  width: 52% !important;
+  width: 56% !important;
 }
 
 .cta-section {
@@ -591,4 +591,9 @@
 .cta-btn {
   padding: 8px 16px;
 }
+}
+@media only screen and (max-width: 400px) {
+  .about-section img{
+    width: 48% !important;
+  }
 }
